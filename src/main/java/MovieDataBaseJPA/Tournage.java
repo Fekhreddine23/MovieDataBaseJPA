@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import MovieDataBaseDTO.PaysDto;
+
 @Entity
 @Table(name = "TOURNAGE")
 public class Tournage {
@@ -90,8 +92,8 @@ public class Tournage {
 	 *
 	 * @param the etat to set
 	 */
-	public void setEtat(String etat) {
-		this.etat = etat;
+	public void setEtat(String paysDto) {
+		this.etat = paysDto;
 	}
 	
 	/**
@@ -113,5 +115,7 @@ public class Tournage {
 	public void setPays(Pays pays) {
 		this.pays = pays;
 	}
+
+	 
 
 }

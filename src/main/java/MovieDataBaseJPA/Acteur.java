@@ -14,6 +14,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import MovieDataBaseDTO.LieuDto;
+
+/**
+ * @author Fekhreddine Class Acteur
+ */
 @Entity
 @Table(name = "ACTEUR")
 public class Acteur extends Personne {
@@ -38,7 +43,7 @@ public class Acteur extends Personne {
 
 	/** taille */
 	@Column(name = "taille")
-	private int taille;
+	private double taille;
 
 	/** constructor */
 	public Acteur() {
@@ -49,7 +54,7 @@ public class Acteur extends Personne {
 
 	/** Liste des roles */
 	@ManyToMany
-	@JoinTable(name = "roles_jouer_acteurs", joinColumns = @JoinColumn(name = "ACTEUR_ID", referencedColumnName = "ID"), 
+	@JoinTable(name = "roles_par_acteurs", joinColumns = @JoinColumn(name = "ACTEUR_ID", referencedColumnName = "ID"),
 	inverseJoinColumns = @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID"))
 
 	private List<Role> roles = new ArrayList<Role>();
@@ -131,7 +136,7 @@ public class Acteur extends Personne {
 	 *
 	 * @return the taille
 	 */
-	public int getTaille() {
+	public double getTaille() {
 		return taille;
 	}
 
@@ -140,8 +145,8 @@ public class Acteur extends Personne {
 	 *
 	 * @param the Taille to set
 	 */
-	public void setTaille(int taille) {
-		this.taille = taille;
+	public void setTaille(double d) {
+		this.taille = d;
 	}
 
 	/**

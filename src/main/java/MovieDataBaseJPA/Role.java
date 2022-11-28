@@ -1,11 +1,20 @@
 package MovieDataBaseJPA;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import MovieDataBaseDTO.ActeurDto;
+import MovieDataBaseDTO.RoleDto;
 
 @Entity
 @Table(name = "ROLE")
@@ -26,6 +35,15 @@ public class Role {
 		super();
 
 	}
+	
+	
+	/**jointure avec acteur*/
+	@ManyToMany
+	@JoinTable(name = "roles_par_acteurs", joinColumns = @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID"),
+			inverseJoinColumns = @JoinColumn(name = "ACTEUR_ID", referencedColumnName = "ID"))
+	
+	//listes acteurs
+	private List<Acteur> acteurs = new ArrayList<Acteur>();
 
 	/**
 	 * Getter pour l'attribut id
@@ -62,5 +80,19 @@ public class Role {
 	public void setNomPersonnage(String nomPersonnage) {
 		this.nomPersonnage = nomPersonnage;
 	}
+
+	public List<Acteur> getActeurs() {
+		return acteurs;
+	}
+
+	public void setActeurs(List<Acteur> acteurs) {
+		this.acteurs = acteurs;
+	}
+
+	
+
+	 
+
+	 
 
 }

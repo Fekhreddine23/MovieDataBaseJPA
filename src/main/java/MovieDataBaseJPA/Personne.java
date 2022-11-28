@@ -18,14 +18,23 @@ public class Personne {
 	@Column(name = "ID")
 	private int id;
 	
-	/** nom */
-	@Column(name = "nom")
-	private String nom;
 	
-	/** prenom */
-	@Column(name = "prenom")
-	private String prenom;
+	/**
+	 * identite
+	 */
+	@Column(name = "identite", length = 100, nullable = false)
+	private String identite;
 	
+	
+	/**
+	 * url
+	 */
+	@Column(name = "url", length = 1000, nullable = true)
+	private String url;
+	
+	
+
+
 	/** constructor */
 	public Personne() {
 		// TODO Auto-generated constructor stub
@@ -54,42 +63,52 @@ public class Personne {
 	}
 
 	
-
-	/**
-	 * Getter pour l'attribut nom
-	 *
-	 * @return the nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-
 	
 	/**
-	 * Setter pour l'attribut nom
-	 *
-	 * @param the nom to set
+	 * @return the identite
 	 */
-	public void setNom(String nom) {
-		this.nom = nom;
+	public String getIdentite() {
+		return identite;
+	}
+
+
+
+	/**
+	 * @param url the identite to set
+	 */
+
+	public void setIdentite(String identite) {
+		this.identite = identite;
+	}
+
+
+	/**
+	 * @return the url
+	 */
+	public String getUrl() {
+		return url;
 	}
 
 	/**
-	 * Getter pour l'attribut prenom
-	 *
-	 * @return the prenom
+	 * @param url the url to set
 	 */
-	public String getPrenom() {
-		return prenom;
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+
+	/**
+	 * Renvoie la methode toString
+	 */
+	@Override
+	public String toString() {
+		return "Personne [id=" + id + ", identite=" + identite + ", url=" + url + "]";
 	}
 	
-	/**
-	 * Setter pour l'attribut prenom
-	 *
-	 * @param the prenom to set
-	 */
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}  
+	
+	
+	
+
 
 }

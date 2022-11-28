@@ -1,6 +1,10 @@
-2 classes differentes pour jackson pour jackson ajouter dto et jpa
+2 classes differentes pour jackson pour jackson ajouter dto et jpa.
 
-faire une entité jackson
+faire une entité jackson.
 
 
-les classes en dto suivre le cheminement du fichier json
+les classes en dto suivre le cheminement du fichier json.
+
+
+
+dto = manipulation fichier json.
